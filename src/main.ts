@@ -17,7 +17,9 @@ export function run()
 	console.error(`N : ${n} | X : ${x} | Y : ${y}`);
 	grid.getCell(x, y).setState(CellStatus.Unfillable);
 
+	grid.solve();
 	const gridDisplayAsString = grid.display();
+
 	const gridDisplayArray = gridDisplayAsString.split('$');
 	for (const line of gridDisplayArray)
 	{

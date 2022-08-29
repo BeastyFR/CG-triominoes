@@ -2,10 +2,16 @@ import { CellStatus } from "./CellStatus";
 
 export class Cell
 {
-	state: CellStatus
-	constructor(state: CellStatus)
+	state: CellStatus;
+	x: number;
+	y: number;
+	idOfTriomino: number = -1;
+
+	constructor(state: CellStatus, x: number, y: number)
 	{
 		this.state = state;
+		this.x = x;
+		this.y = y;
 	}
 
 	getState(): CellStatus
@@ -16,5 +22,10 @@ export class Cell
 	setState(state: CellStatus): void
 	{
 		this.state = state;
+	}
+
+	isTriomino(): boolean
+	{
+		return this.state == CellStatus.Triomino;
 	}
 }
